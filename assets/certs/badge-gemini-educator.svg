@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285.91 64.21" width="285.91px" height="64.21px">
+  <defs>
+    <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B6EF3" />
+      <stop offset="35%" stop-color="#6366F1" />
+      <stop offset="70%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="geminiGradSub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+
+  <!-- Gemini Sparkle Icon (Left) -->
+  <g id="gemini-icon" transform="translate(4, 6)">
+    <!-- Main 4-point Diamond Star -->
+    <path d="M26 0 C26 14.36 14.36 26 0 26 C14.36 26 26 37.64 26 52 C26 37.64 37.64 26 52 26 C37.64 26 26 14.36 26 0 Z" fill="url(#geminiGrad)" />
+    <!-- Secondary Mini Sparkle (Top-Right) -->
+    <path d="M47 3 C47 7.42 43.42 11 39 11 C43.42 11 47 14.58 47 19 C47 14.58 50.58 11 55 11 C50.58 11 47 7.42 47 3 Z" fill="url(#geminiGradSub)" opacity="0.9" />
+  </g>
+
+  <!-- Typography (Right) -->
+  <g id="gemini-text" transform="translate(72, 0)">
+    <!-- Brand Name "Gemini" -->
+    <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Roboto, sans-serif" font-size="28" font-weight="800" fill="#0f172a" letter-spacing="-0.5">Gemini</text>
+    <!-- Subtitle "Certified Educator" -->
+    <text x="0" y="52" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#2563eb" letter-spacing="0.2">Certified Educator</text>
+  </g>
+</svg>

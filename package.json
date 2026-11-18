@@ -1,0 +1,9 @@
+{
+  "name": "portal-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ekosistem Pendidikan CikguHafreez.my - Central Portal Landing Page",
+  "scripts": {
+    "build": "echo 'Static landing page, zero build required.'"
+  }
+}

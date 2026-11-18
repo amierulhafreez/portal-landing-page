@@ -1,0 +1,429 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Apple Liquid Glass Design System - Ekosistem CikguHafreez.my
+   Inspired by macOS Sonoma / iOS 18 / visionOS Spatial UI
+   ========================================================================== */
+
+:root {
+  --apple-bg: #F5F5F7;
+  --apple-text-primary: #1D1D1F;
+  --apple-text-secondary: #515154;
+  --apple-text-tertiary: #86868B;
+  --apple-blue: #0071E3;
+  --apple-blue-hover: #0077ED;
+  --apple-blue-active: #0062C4;
+  --apple-blue-subtle: rgba(0, 113, 227, 0.08);
+  --apple-gold: #B45309;
+  --apple-gold-bg: rgba(245, 158, 11, 0.12);
+  --apple-gold-border: rgba(245, 158, 11, 0.35);
+  --glass-surface: rgba(255, 255, 255, 0.78);
+  --glass-surface-hover: rgba(255, 255, 255, 0.94);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-inner-specular: inset 0 1px 1.5px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.03);
+  --glass-ambient-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  --glass-hover-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 1), 0 24px 48px -12px rgba(0, 113, 227, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+  --spring-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Body Styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--apple-bg);
+  color: var(--apple-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  letter-spacing: -0.012em;
+  text-rendering: optimizeLegibility;
+}
+
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* GPU Accelerated Smooth Surfaces */
+.liquid-glass,
+.liquid-glass-nav,
+.glass-modal-panel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+}
+
+/* Background Animated Ambient Mesh Gradient */
+.ambient-mesh-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.mesh-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(95px);
+  opacity: 0.6;
+  will-change: transform;
+  animation: floatOrb 22s infinite alternate ease-in-out;
+}
+
+.mesh-orb-1 {
+  top: -10%;
+  left: 15%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(219, 234, 254, 0.75) 0%, rgba(191, 219, 254, 0.25) 70%, transparent 100%);
+  animation-duration: 22s;
+}
+
+.mesh-orb-2 {
+  top: 30%;
+  right: -5%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(224, 231, 255, 0.7) 0%, rgba(199, 210, 254, 0.2) 70%, transparent 100%);
+  animation-duration: 26s;
+  animation-delay: -5s;
+}
+
+.mesh-orb-3 {
+  bottom: 10%;
+  left: -5%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(238, 242, 255, 0.65) 0%, rgba(224, 242, 254, 0.25) 70%, transparent 100%);
+  animation-duration: 24s;
+  animation-delay: -10s;
+}
+
+.mesh-orb-4 {
+  top: 70%;
+  right: 25%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(254, 243, 199, 0.4) 0%, rgba(253, 230, 138, 0.12) 70%, transparent 100%);
+  animation-duration: 28s;
+  animation-delay: -7s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(35px, 25px) scale(1.05);
+  }
+  100% {
+    transform: translate(-25px, 45px) scale(0.96);
+  }
+}
+
+/* ==========================================================================
+   Liquid Glass Components
+   ========================================================================== */
+
+/* Standard Liquid Glass Card */
+.liquid-glass {
+  background: var(--glass-surface);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-inner-specular), var(--glass-ambient-shadow);
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.45s var(--spring-ease), box-shadow 0.45s var(--spring-ease), border-color 0.45s var(--spring-ease), background 0.45s ease;
+}
+
+/* Specular Light Sweep Sheen on Hover */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: transform 0.85s ease-in-out;
+  transform: skewX(-15deg);
+  z-index: 10;
+}
+
+.liquid-glass:hover::before {
+  transform: translateX(250%) skewX(-15deg);
+}
+
+.liquid-glass-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glass-hover-shadow);
+  border-color: rgba(255, 255, 255, 0.98);
+  background: var(--glass-surface-hover);
+}
+
+/* Custom Delicate Liquid Glass Themed App Cards (Apple Subtle Outlines) */
+.liquid-glass-emerald {
+  background: linear-gradient(180deg, rgba(236, 253, 245, 0.65) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(255, 255, 255, 0.75) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.38) !important;
+  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 1), 0 16px 36px -12px rgba(16, 185, 129, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.liquid-glass-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.65) !important;
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 1), 0 24px 48px -12px rgba(16, 185, 129, 0.20), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+}
+
+.liquid-glass-amber {
+  background: linear-gradient(180deg, rgba(254, 243, 199, 0.60) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(255, 255, 255, 0.75) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.44) !important;
+  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 1), 0 16px 36px -12px rgba(245, 158, 11, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.liquid-glass-amber:hover {
+  border-color: rgba(245, 158, 11, 0.75) !important;
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 1), 0 24px 48px -12px rgba(245, 158, 11, 0.24), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+}
+
+.liquid-glass-blue {
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.65) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(255, 255, 255, 0.75) 100%);
+  border: 1px solid rgba(0, 113, 227, 0.38) !important;
+  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 1), 0 16px 36px -12px rgba(0, 113, 227, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.liquid-glass-blue:hover {
+  border-color: rgba(0, 113, 227, 0.65) !important;
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 1), 0 24px 48px -12px rgba(0, 113, 227, 0.22), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Interactive Floating Nav Pill */
+.liquid-glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(26px) saturate(190%);
+  -webkit-backdrop-filter: blur(26px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), inset 0 1px 1.5px 0 rgba(255, 255, 255, 1);
+  border-radius: 9999px;
+  transition: all 0.3s var(--spring-ease);
+}
+
+/* Floating Glass Pill Badges */
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.03), inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  border-radius: 9999px;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  transition: all 0.25s var(--spring-ease);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--apple-text-primary);
+  transform: translateY(-1px);
+}
+
+/* Badge Color Themes */
+.gold-glass-badge {
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.9) 0%, rgba(253, 230, 138, 0.7) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 16px -2px rgba(245, 158, 11, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  color: #92400E;
+}
+
+.blue-glass-badge {
+  background: linear-gradient(135deg, rgba(224, 242, 254, 0.9) 0%, rgba(186, 230, 253, 0.7) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  box-shadow: 0 4px 16px -2px rgba(14, 165, 233, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  color: #0369A1;
+}
+
+.emerald-glass-badge {
+  background: linear-gradient(135deg, rgba(209, 250, 229, 0.9) 0%, rgba(167, 243, 208, 0.7) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  color: #065F46;
+}
+
+/* ==========================================================================
+   Standardized Pill Buttons System
+   ========================================================================== */
+
+.btn-apple-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--apple-blue);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 8px 20px -4px rgba(0, 113, 227, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s var(--spring-ease);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-apple-primary:hover {
+  background-color: var(--apple-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 113, 227, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-apple-primary:active {
+  background-color: var(--apple-blue-active);
+  transform: translateY(0);
+}
+
+.btn-apple-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+  color: var(--apple-text-primary);
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.05), inset 0 1px 1.5px 0 rgba(255, 255, 255, 1);
+  transition: all 0.25s var(--spring-ease);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-apple-glass:hover {
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.08), inset 0 1px 1.5px 0 rgba(255, 255, 255, 1);
+  color: var(--apple-blue);
+}
+
+.btn-apple-glass:active {
+  transform: translateY(0);
+}
+
+/* Modals */
+.glass-modal-backdrop {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: opacity 0.3s ease;
+}
+
+.glass-modal-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.22), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  border-radius: 32px;
+  transition: all 0.35s var(--spring-ease);
+}
+
+/* Pulsing Status Dot */
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+}
+
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background-color: inherit;
+  opacity: 0.5;
+  animation: pulsePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulsePing {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F7;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+  border: 2px solid #F5F5F7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Focus Rings */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--apple-blue);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Cross-Device & High Refresh Rate (120Hz/ProMotion) Optimizations
+   ========================================================================== */
+
+/* Smooth momentum scrolling for iOS/Android */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent 3D tilt jitter on touch devices (iPad, iPhone, Android) */
+@media (hover: none) and (pointer: coarse) {
+  .tilt-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Touch action optimization for smooth vertical scrolling */
+.carousel-slide-frame {
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Touch feedback for buttons */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}

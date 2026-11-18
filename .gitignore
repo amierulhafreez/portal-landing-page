@@ -1,0 +1,11 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Raw uncompressed media source folder (not needed in production)
+Gambar/
+
+# Dependencies & Build Cache
+node_modules/
+.vercel/
+dist/

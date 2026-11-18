@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ekosistem Pendidikan CikguHafreez.my — Hab Inovasi Guru & Kimia SPM</title>
+  <meta name="description" content="Hab berpusat inovasi pendidikan digital Cikgu Amierul Hafreez: eRPH Pintar KSSM, Simulasi Kimia (Johan Emas i-MARATeCH 2026), Nota Kimia SPM interaktif, serta pensijilan Apple Teacher & Google Certified Educator.">
+  <meta name="keywords" content="Cikgu Hafreez, eRPH Pintar, Simulasi Kimia, Nota Kimia SPM, Kimia Tingkatan 4, Kimia Tingkatan 5, Inovasi Pendidikan MARA, DSKP KSSM, Apple Teacher, Google Certified Educator, Gemini Certified Educator">
+  <meta name="author" content="Amierul Hafreez">
+
+  <!-- Open Graph / Meta Sosial -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cikguhafreez.my/">
+  <meta property="og:title" content="Ekosistem Pendidikan CikguHafreez.my">
+  <meta property="og:description" content="Ekosistem Digital untuk Guru & Pelajar Masa Hadapan. Permudahkan eRPH dan kuasai konsep Kimia secara visual.">
+  <meta property="og:image" content="assets/images/cikgu-hafreez-portrait-hd.png">
+
+  <!-- Favicon & Apple Touch Icon -->
+  <link rel="icon" type="image/png" href="assets/icons/icon-ecosystem-sm.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-ecosystem.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            apple: {
+              blue: '#0071E3',
+              'blue-hover': '#0077ED',
+              slate: '#1D1D1F',
+              secondary: '#515154',
+              tertiary: '#86868B',
+              bg: '#F5F5F7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Apple Liquid Glass Design System CSS -->
+  <link rel="stylesheet" href="assets/css/liquid-glass.css">
+</head>
+<body class="relative selection:bg-blue-500/20 selection:text-blue-900">
+
+  <!-- =========================================================================
+       Background Ambient Mesh Gradients (Apple Dynamic Liquid Canvas)
+       ========================================================================= -->
+  <div class="ambient-mesh-canvas" aria-hidden="true">
+    <div class="mesh-orb mesh-orb-1"></div>
+    <div class="mesh-orb mesh-orb-2"></div>
+    <div class="mesh-orb mesh-orb-3"></div>
+    <div class="mesh-orb mesh-orb-4"></div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- =========================================================================
+       A. Floating Glass Navigation Bar (Sticky Top - Apple Vision / macOS Pill)
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 pt-4 sm:pt-6 pointer-events-none transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Center-floating glass container with pointer-events-auto -->
+      <nav id="main-nav" class="liquid-glass-nav w-full px-5 py-3 sm:px-7 sm:py-3.5 flex items-center justify-between pointer-events-auto">
+        
+        <!-- Left: Brand Wordmark with Official App Icon -->
+        <a href="#" class="flex items-center gap-3.5 sm:gap-4 group transition-transform duration-300 hover:scale-[1.02] flex-shrink-0">
+          <div class="w-12 h-12 sm:w-[58px] sm:h-[58px] rounded-[15px] sm:rounded-[18px] overflow-hidden shadow-lg shadow-blue-500/15 border border-white/95 flex-shrink-0 group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300 bg-white p-0.5">
+            <img src="assets/icons/icon-ecosystem.png" alt="Ekosistem Pendidikan CikguHafreez" class="w-full h-full object-cover rounded-[13px] sm:rounded-[16px]">
+          </div>
+          <div class="flex flex-col justify-center">
+            <span class="text-xl sm:text-[23px] font-black tracking-tight text-apple-slate leading-tight">
+              CikguHafreez<span class="text-apple-blue font-black">.my</span>
+            </span>
+            <span class="text-[11px] sm:text-xs font-bold text-slate-500 tracking-wider uppercase mt-0.5 flex items-center gap-1.5">
+              <span>Ekosistem Pendidikan</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Center Links (Desktop) -->
+        <div class="hidden lg:flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-apple-secondary">
+          <a href="#ekosistem" class="px-4 py-2 rounded-full hover:text-apple-slate hover:bg-white/70 transition-all duration-200">Ekosistem</a>
+          <a href="#tentang" class="px-4 py-2 rounded-full hover:text-apple-slate hover:bg-white/70 transition-all duration-200">Tentang Saya</a>
+          <a href="#pensijilan" class="px-4 py-2 rounded-full hover:text-apple-slate hover:bg-white/70 transition-all duration-200">Pensijilan</a>
+          <a href="#galeri" class="px-4 py-2 rounded-full hover:text-apple-slate hover:bg-white/70 transition-all duration-200">Galeri Aktiviti</a>
+          <a href="#kolaborasi" class="px-4 py-2 rounded-full hover:text-apple-slate hover:bg-white/70 transition-all duration-200">Kolaborasi</a>
+        </div>
+
+        <!-- Right CTA & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#ekosistem" class="btn-apple-primary hidden sm:inline-flex text-sm sm:text-base font-bold py-2.5 sm:py-3 px-5 sm:px-6 shadow-lg shadow-blue-500/25">
+            <span>Terokai Aplikasi</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-2xl bg-white/70 hover:bg-white text-apple-slate border border-white/80 transition-colors shadow-sm" aria-label="Buka menu navigasi" aria-expanded="false">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 pointer-events-auto">
+      <div class="liquid-glass p-4 flex flex-col gap-2 rounded-2xl bg-white/95 shadow-xl">
+        <a href="#ekosistem" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/70 text-sm font-semibold text-apple-slate">
+          <span class="flex items-center gap-2.5"><i data-lucide="layout-grid" class="w-4 h-4 text-apple-blue"></i> Ekosistem Aplikasi</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-apple-tertiary"></i>
+        </a>
+        <a href="#tentang" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/70 text-sm font-semibold text-apple-slate">
+          <span class="flex items-center gap-2.5"><i data-lucide="user" class="w-4 h-4 text-apple-blue"></i> Tentang Cikgu Hafreez</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-apple-tertiary"></i>
+        </a>
+        <a href="#pensijilan" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/70 text-sm font-semibold text-apple-slate">
+          <span class="flex items-center gap-2.5"><i data-lucide="award" class="w-4 h-4 text-emerald-600"></i> Sijil Apple & Google</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-apple-tertiary"></i>
+        </a>
+        <a href="#galeri" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/70 text-sm font-semibold text-apple-slate">
+          <span class="flex items-center gap-2.5"><i data-lucide="image" class="w-4 h-4 text-amber-500"></i> Album Aktiviti & Arkib</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-apple-tertiary"></i>
+        </a>
+        <a href="#kolaborasi" class="mobile-nav-link flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/70 text-sm font-semibold text-apple-slate">
+          <span class="flex items-center gap-2.5"><i data-lucide="sparkles" class="w-4 h-4 text-indigo-500"></i> Kolaborasi & Bengkel</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-apple-tertiary"></i>
+        </a>
+        <div class="pt-2 border-t border-slate-200/60 mt-1">
+          <a href="#ekosistem" class="mobile-nav-link btn-apple-primary w-full text-xs py-2.5">
+            <span>Terokai Semua Aplikasi</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         B. Hero Section (Spacious, Apple Keynote Style, Centered)
+         ========================================================================= -->
+    <section class="pt-36 sm:pt-44 pb-16 sm:pb-24 px-4 sm:px-6 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        <!-- Top Pill Badge with subtle glass glow -->
+        <div class="glass-pill mb-6 sm:mb-8 animate-fade-in">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-apple-slate font-semibold text-xs sm:text-sm tracking-tight">Inovasi Digital Pendidikan & Kimia SPM</span>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-600"></i>
+        </div>
+
+        <!-- Main Headline (H1) -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-apple-slate tracking-tight leading-[1.12] sm:leading-[1.12] mb-6">
+          Ekosistem Digital untuk <br class="hidden sm:inline">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-apple-blue via-indigo-600 to-blue-700">Guru & Pelajar</span> Masa Hadapan.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg md:text-xl text-apple-secondary max-w-2xl font-normal leading-relaxed mb-8 sm:mb-10">
+          Menghubungkan teknologi pintar dan pedagogi moden. Permudahkan pengurusan RPH guru dan kuasai konsep Kimia secara visual serta interaktif dalam satu hab bersepadu.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-14">
+          <a href="#ekosistem" class="btn-apple-primary w-full sm:w-auto text-sm sm:text-base py-3.5 px-8">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+            <span>Terokai Ekosistem</span>
+          </a>
+          <a href="#tentang" class="btn-apple-glass w-full sm:w-auto text-sm sm:text-base py-3.5 px-8">
+            <i data-lucide="user-check" class="w-5 h-5 text-apple-blue"></i>
+            <span>Profil Pembangun</span>
+          </a>
+        </div>
+
+        <!-- Hero Visual Showcase: Floating Bento-style Glass Preview Bar -->
+        <div class="w-full max-w-3xl liquid-glass p-3 sm:p-4 rounded-3xl shadow-xl border border-white/90">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <!-- Pill 1: Status Aplikasi with Real App Icons -->
+            <div class="bg-white/70 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 flex items-center gap-2.5 border border-white/80 text-left">
+              <div class="flex -space-x-3 flex-shrink-0">
+                <img src="assets/icons/icon-erph.png" alt="eRPH Pintar" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl shadow-sm border border-white object-cover">
+                <img src="assets/icons/icon-simulasi.png" alt="Simulasi Kimia" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl shadow-sm border border-white object-cover">
+                <img src="assets/icons/icon-notakimia.png" alt="Nota Kimia" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl shadow-sm border border-white object-cover">
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="pulse-dot"></span>
+                  <p class="text-xs font-bold text-apple-slate truncate">3 Aplikasi Aktif</p>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-apple-tertiary whitespace-nowrap">eRPH • Simulasi • Nota</p>
+              </div>
+            </div>
+
+            <!-- Pill 2: Selaras DSKP KSSM -->
+            <div class="bg-white/70 backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 border border-white/80 text-left">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-apple-blue flex items-center justify-center flex-shrink-0 border border-blue-500/20">
+                <i data-lucide="check-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-apple-slate">Selaras DSKP KSSM</p>
+                <p class="text-[11px] text-apple-tertiary">Standard KPM & MARA</p>
+              </div>
+            </div>
+
+            <!-- Pill 3: Percuma & Interaktif -->
+            <div class="bg-white/70 backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 border border-white/80 text-left">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center flex-shrink-0 border border-amber-500/20">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-apple-slate">Percuma & Interaktif</p>
+                <p class="text-[11px] text-apple-tertiary">Akses Terbuka Web</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         C. Direktori Ekosistem Aplikasi (3-Column Bento Liquid Glass Grid)
+         ========================================================================= -->
+    <section id="ekosistem" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="glass-pill mb-3">
+          <i data-lucide="boxes" class="w-4 h-4 text-apple-blue"></i>
+          <span>Hab Bersepadu</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-apple-slate tracking-tight mb-4">
+          Direktori Ekosistem Aplikasi
+        </h2>
+        <p class="text-apple-secondary text-sm sm:text-base leading-relaxed">
+          Penyelesaian digital yang dibangunkan khusus untuk memenuhi keperluan harian guru serta memperkasa kefahaman pelajar dalam silibus Kimia SPM.
+        </p>
+      </div>
+
+      <!-- 3-Column Bento Liquid Glass Grid -->
+      <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+
+        <!-- ================= CARD 1: eRPH Pintar KSSM ================= -->
+        <article class="liquid-glass liquid-glass-hover liquid-glass-emerald tilt-card p-6 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <!-- Top Tag & Official App Icon Row -->
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <span class="glass-pill emerald-glass-badge whitespace-nowrap mt-1">
+                <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                <span>Untuk Guru</span>
+              </span>
+              <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[26px] overflow-hidden shadow-lg border border-white/90 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300 flex-shrink-0 bg-white p-0.5">
+                <img src="assets/icons/icon-erph.png" alt="Ikon Aplikasi eRPH Pintar KSSM" class="w-full h-full object-cover rounded-[24px]">
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-apple-slate tracking-tight group-hover:text-apple-blue transition-colors">
+              eRPH Pintar KSSM
+            </h3>
+
+            <!-- Subtitle Badge (Seragam Aras) -->
+            <div class="mt-2.5 mb-3.5 min-h-[28px] flex items-center">
+              <span class="glass-pill emerald-glass-badge inline-flex items-center gap-1.5 py-1 px-3 text-xs font-semibold tracking-tight rounded-xl">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Pengurusan RPH Digital KSSM</span>
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-apple-secondary text-sm leading-relaxed mb-6">
+              Sistem penjanaan dan pengurusan Rancangan Pengajaran Harian (RPH) bersepadu yang pantas, sistematik, dan selaras sepenuhnya dengan DSKP KSSM.
+            </p>
+
+            <!-- Feature Pills / Highlights -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="cpu" class="w-3 h-3 text-emerald-600"></i> Auto DSKP Data
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="cloud-check" class="w-3 h-3 text-emerald-600"></i> Integrasi Google Drive
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3 h-3 text-emerald-600"></i> Jimat Masa 70%
+              </span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Link -->
+          <div class="pt-5 border-t border-slate-200/60 flex flex-col gap-2.5">
+            <a href="https://erph-pintar.cikguhafreez.my/" target="_blank" rel="noopener noreferrer" class="btn-apple-primary w-full text-xs sm:text-sm py-3 px-4 font-semibold group/btn" aria-label="Buka eRPH Pintar KSSM dalam tab baharu">
+              <span>Buka eRPH Pintar</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+            </a>
+            <div class="flex items-center justify-center gap-1.5 text-[11px] font-medium text-apple-tertiary">
+              <i data-lucide="globe" class="w-3.5 h-3.5 text-apple-tertiary"></i>
+              <span>erph-pintar.cikguhafreez.my</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= CARD 2: Simulasi Kimia (GOLD BADGE HIGHLIGHT) ================= -->
+        <article class="liquid-glass liquid-glass-hover liquid-glass-amber tilt-card p-6 sm:p-8 flex flex-col justify-between group relative">
+          <div>
+            <!-- Top Tag & Official App Icon Row -->
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <span class="glass-pill whitespace-nowrap mt-1">
+                <i data-lucide="users" class="w-3.5 h-3.5 text-apple-blue"></i>
+                <span>Untuk Pelajar & Guru</span>
+              </span>
+              <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[26px] overflow-hidden shadow-lg border border-white/90 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300 flex-shrink-0 bg-white p-0.5">
+                <img src="assets/icons/icon-simulasi.png" alt="Ikon Aplikasi Simulasi Kimia" class="w-full h-full object-cover rounded-[24px]">
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-apple-slate tracking-tight group-hover:text-apple-blue transition-colors">
+              Simulasi Kimia
+            </h3>
+
+            <!-- Prominent Gold Glass Badge below Title -->
+            <div class="mt-2.5 mb-3.5 min-h-[28px] flex items-center">
+              <span class="gold-glass-badge glass-pill inline-flex items-center gap-1.5 py-1 px-3 text-xs font-bold tracking-tight rounded-xl">
+                <span>🏆 Johan / Pingat Emas i-MARATeCH 2026</span>
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-apple-secondary text-sm leading-relaxed mb-6">
+              Makmal maya interaktif untuk memvisualisasikan konsep abstrak dan menjalankan eksperimen Kimia secara selamat, dinamik, dan menyeronokkan.
+            </p>
+
+            <!-- Feature Pills / Highlights -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="test-tube-2" class="w-3 h-3 text-amber-600"></i> Makmal Maya Titrasi
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="eye" class="w-3 h-3 text-amber-600"></i> Visualisasi Zarah
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3 h-3 text-amber-600"></i> Eksperimen Selamat
+              </span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Link -->
+          <div class="pt-5 border-t border-slate-200/60 flex flex-col gap-2.5">
+            <a href="https://simulasikimia.cikguhafreez.my" target="_blank" rel="noopener noreferrer" class="btn-apple-primary w-full text-xs sm:text-sm py-3 px-4 font-semibold group/btn" aria-label="Lancarkan Simulasi Kimia dalam tab baharu">
+              <span>Lancarkan Simulasi</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+            </a>
+            <div class="flex items-center justify-center gap-1.5 text-[11px] font-medium text-apple-tertiary">
+              <i data-lucide="globe" class="w-3.5 h-3.5 text-apple-tertiary"></i>
+              <span>simulasikimia.cikguhafreez.my</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= CARD 3: Nota Kimia (NEW BADGE) ================= -->
+        <article class="liquid-glass liquid-glass-hover liquid-glass-blue tilt-card p-6 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <!-- Top Tag & Official App Icon Row -->
+            <div class="flex items-start justify-between gap-4 mb-6">
+              <span class="glass-pill whitespace-nowrap mt-1">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-apple-blue"></i>
+                <span>Untuk Pelajar SPM</span>
+              </span>
+              <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-[26px] overflow-hidden shadow-lg border border-white/90 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300 flex-shrink-0 bg-white p-0.5">
+                <img src="assets/icons/icon-notakimia.png" alt="Ikon Aplikasi Nota Kimia SPM" class="w-full h-full object-cover rounded-[24px]">
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-apple-slate tracking-tight group-hover:text-apple-blue transition-colors">
+              Nota Kimia
+            </h3>
+
+            <!-- Subtitle Badge (Seragam Aras) -->
+            <div class="mt-2.5 mb-3.5 min-h-[28px] flex items-center">
+              <span class="blue-glass-badge glass-pill inline-flex items-center gap-1.5 py-1 px-3 text-xs font-semibold tracking-tight rounded-xl">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Baharu • Nota Interaktif SPM</span>
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-apple-secondary text-sm leading-relaxed mb-6">
+              Himpunan nota padat Kimia Tingkatan 4 & 5 berkonsepkan pembaca interaktif, mod hafalan pantas, kad imbas (flashcards), dan kuiz kendiri.
+            </p>
+
+            <!-- Feature Pills / Highlights -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-3 h-3 text-apple-blue"></i> Kad Imbas Pantas
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="help-circle" class="w-3 h-3 text-apple-blue"></i> Kuiz Kendiri Pintar
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-black/[0.03] border border-black/[0.05] text-[11px] font-semibold text-slate-700 flex items-center gap-1.5">
+                <i data-lucide="bookmark" class="w-3 h-3 text-apple-blue"></i> Tingkatan 4 & 5
+              </span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Link -->
+          <div class="pt-5 border-t border-slate-200/60 flex flex-col gap-2.5">
+            <a href="https://notakimia.cikguhafreez.my" target="_blank" rel="noopener noreferrer" class="btn-apple-primary w-full text-xs sm:text-sm py-3 px-4 font-semibold group/btn" aria-label="Mula Ulang Kaji Nota Kimia dalam tab baharu">
+              <span>Mula Ulang Kaji</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+            </a>
+            <div class="flex items-center justify-center gap-1.5 text-[11px] font-medium text-apple-tertiary">
+              <i data-lucide="globe" class="w-3.5 h-3.5 text-apple-tertiary"></i>
+              <span>notakimia.cikguhafreez.my</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         D. Profil Pembangun & Kredibiliti ("Tentang Cikgu Hafreez")
+         ========================================================================= -->
+    <section id="tentang" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="glass-pill mb-3">
+          <i data-lucide="user-check" class="w-4 h-4 text-apple-blue"></i>
+          <span>Mengenai Pembangun</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-apple-slate tracking-tight mb-4">
+          Pendidik, Inovator & Penggerak Digital
+        </h2>
+        <p class="text-apple-secondary text-sm sm:text-base leading-relaxed">
+          Menggabungkan kepakaran kurikulum Kimia KSSM dengan pembangunan perisian moden untuk mencipta impak berkekalan di bilik darjah.
+        </p>
+      </div>
+
+      <!-- Asymmetrical 2-Column Bento Container -->
+      <div class="w-full grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Left Column: Portrait Card (5 cols on md/lg) -->
+        <div class="md:col-span-5 liquid-glass p-4 sm:p-5 flex flex-col justify-between relative group overflow-hidden">
+          
+          <!-- Portrait Image Frame -->
+          <div class="relative w-full rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200 aspect-[4/5] sm:aspect-[3/4] max-h-[520px] flex items-center justify-center shadow-inner">
+            <img 
+              src="assets/images/cikgu-hafreez-portrait-hd.png" 
+              alt="Cikgu Amierul Hafreez — Guru Kimia, MRSM Bagan Datuk"
+              class="w-full h-full object-cover object-top filter contrast-[1.02] transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/400x520/e2e8f0/1e293b?text=Cikgu+Amierul+Hafreez';"
+            >
+
+            <!-- Subtle Inner Gradient Vignette for Readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+
+            <!-- Overlaid Floating Glass Name Tag -->
+            <div class="absolute bottom-3 left-3 right-3 p-3.5 rounded-xl bg-white/85 backdrop-blur-md border border-white/90 shadow-lg text-left">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <h4 class="text-sm font-bold text-apple-slate">Cikgu Amierul Hafreez</h4>
+              </div>
+              <p class="text-[11px] text-apple-secondary font-medium leading-snug mt-1">
+                Guru Kimia, MRSM Bagan Datuk
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Action: Preview i-MARATeCH 2026 Victory Gallery -->
+          <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-amber-700 flex items-center gap-1.5">
+              <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i> Johan i-MARATeCH 2026
+            </span>
+            <button onclick="openGallery(0)" class="text-xs font-semibold text-apple-blue hover:text-blue-700 flex items-center gap-1 py-1 px-2.5 rounded-lg hover:bg-blue-50/80 transition-colors">
+              <span>Lihat Foto Galeri</span>
+              <i data-lucide="images" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Bio & Credentials Bento Grid (7 cols on md/lg) -->
+        <div id="pencapaian" class="md:col-span-7 flex flex-col justify-between gap-6">
+          
+          <!-- Authoritative Bio Card -->
+          <div class="liquid-glass p-6 sm:p-7">
+            <h3 class="text-xl sm:text-2xl font-bold text-apple-slate tracking-tight mb-3">
+              Merapatkan Jurang Pedagogi Kimia & Inovasi Perisian
+            </h3>
+            <p class="text-apple-secondary text-sm sm:text-base leading-relaxed mb-4">
+              Pendidik yang bersemangat memacu transformasi digital dalam pendidikan STEM. Berpengalaman membina aplikasi web praktikal untuk meringankan beban kerja guru serta memudahkan pemahaman konsep Kimia yang abstrak bagi pelajar SPM melalui visualisasi intuitif dan pedagogi terbeza.
+            </p>
+            <p class="text-apple-secondary text-sm leading-relaxed">
+              Komited memastikan setiap inovasi dibangunkan berpaksikan <strong class="text-apple-slate">realiti bilik darjah</strong>—mesra peranti mudah alih, pantas, selaras dengan DSKP terkini, dan mudah diakses oleh sesiapa sahaja tanpa kekangan kos.
+            </p>
+          </div>
+
+          <!-- 2x2 Mini Glass Bento Grid for Key Milestones -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Milestone 1: i-MARATeCH 2026 -->
+            <div class="liquid-glass p-5 flex flex-col justify-between group hover:border-amber-300 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="gold-glass-badge glass-pill text-[10px] py-0.5 px-2">
+                  Anugerah Emas
+                </span>
+                <i data-lucide="trophy" class="w-5 h-5 text-amber-500 group-hover:scale-110 transition-transform"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-apple-slate mb-1">
+                  Pingat Emas i-MARATeCH 2026
+                </h4>
+                <p class="text-xs text-apple-secondary leading-relaxed">
+                  Johan Kategori Inovasi Alat Bantu Mengajar (iABM) menerusi inovasi <em>Simulasi Kimia Cikgu Hafreez</em>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 2: Penulis Modul MARA -->
+            <div class="liquid-glass p-5 flex flex-col justify-between group hover:border-blue-300 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="blue-glass-badge glass-pill text-[10px] py-0.5 px-2">
+                  Penulis Modul
+                </span>
+                <i data-lucide="book-marked" class="w-5 h-5 text-apple-blue group-hover:scale-110 transition-transform"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-apple-slate mb-1">
+                  Penulis Modul Kimia MARA
+                </h4>
+                <p class="text-xs text-apple-secondary leading-relaxed">
+                  Penulis bersama Modul Kimia SPM MARA (<em>Alchemy Booster</em> Tingkatan 4 & 5) yang digunapakai seluruh MRSM.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 3: Pengiktirafan & Kolaborasi -->
+            <div class="liquid-glass p-5 flex flex-col justify-between group hover:border-indigo-300 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="glass-pill text-[10px] py-0.5 px-2">
+                  Pengiktirafan
+                </span>
+                <i data-lucide="mic" class="w-5 h-5 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-apple-slate mb-1">
+                  Pengiktirafan & Kolaborasi
+                </h4>
+                <p class="text-xs text-apple-secondary leading-relaxed">
+                  Finalis Pidato 3-Minit K2M Perak ke-7 (UTAR) & Penggerak Kolaborasi Akademik <em>Spark Chemistry</em> bersama UiTM.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 4: Pensijilan Digital -->
+            <div class="liquid-glass p-5 flex flex-col justify-between group hover:border-emerald-300 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <span class="emerald-glass-badge glass-pill text-[10px] py-0.5 px-2">
+                  Kelayakan
+                </span>
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-apple-slate mb-1">
+                  Kelayakan Akademik
+                </h4>
+                <p class="text-xs text-apple-secondary leading-relaxed">
+                  Ijazah Sarjana Muda Sains Pendidikan (Kepujian) Kimia, Universiti Teknologi MARA (UiTM).
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         E. PENSIJILAN PROFESIONAL DIGITAL (Apple Teacher & Google Certified)
+         ========================================================================= -->
+    <section id="pensijilan" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="glass-pill mb-3">
+          <i data-lucide="award" class="w-4 h-4 text-emerald-600"></i>
+          <span>Kelayakan & Kredibiliti Digital</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-apple-slate tracking-tight mb-4">
+          Pensijilan Profesional Apple & Google
+        </h2>
+        <p class="text-apple-secondary text-sm sm:text-base leading-relaxed">
+          Diiktiraf secara antarabangsa dalam integrasi teknologi kecerdasan buatan (AI) bilik darjah, pengurusan pengajaran berasaskan awan, dan pedagogi digital berimpak tinggi.
+        </p>
+      </div>
+
+      <!-- 3-Column Glass Bento Grid for Certifications -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- CERT 1: Gemini Certified Educator -->
+        <div class="liquid-glass liquid-glass-hover p-6 sm:p-7 flex flex-col justify-between group border-blue-200/60 relative">
+          <div class="relative z-10">
+            <!-- Top Row: Badge & Official Pill -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="blue-glass-badge glass-pill text-[11px] py-1 px-3">
+                Google for Education
+              </span>
+              <span class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Sah 2026–2029
+              </span>
+            </div>
+
+            <!-- Official Badge Image Display -->
+            <div class="flex justify-center mb-6">
+              <div class="w-28 h-28 rounded-2xl bg-white/90 p-3 shadow-md border border-white/90 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/certs/badge-gemini.png" alt="Lencana Gemini Certified Educator" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-apple-slate mb-2 text-center">Gemini Certified Educator</h3>
+            <p class="text-apple-secondary text-xs sm:text-sm leading-relaxed text-center mb-6">
+              Penguasaan konsep teras kecerdasan buatan (Gen-AI) dan keupayaan memanfaatkan model Gemini dalam perancangan pedagogi, pembezaan pembelajaran, dan inovasi bilik darjah.
+            </p>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-5 border-t border-slate-200/60 flex items-center gap-2 relative z-10">
+            <button onclick="openCertModal('gemini')" class="btn-apple-glass flex-1 text-xs py-2.5 px-3">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-apple-blue"></i>
+              <span>Lihat Sijil</span>
+            </button>
+            <a href="https://www.credential.net/50464e62-eff5-4a73-9ef8-582cbc953e3f" target="_blank" rel="noopener noreferrer" class="btn-apple-primary flex-1 text-xs py-2.5 px-3">
+              <span>Sahkan</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CERT 2: Google Certified Educator (L1 & L2) -->
+        <div class="liquid-glass liquid-glass-hover p-6 sm:p-7 flex flex-col justify-between group border-emerald-200/60 relative">
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <span class="emerald-glass-badge glass-pill text-[11px] py-1 px-3">
+                Level 1 & Level 2
+              </span>
+              <span class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Sah 2026–2029
+              </span>
+            </div>
+
+            <!-- Official Badge Image Display -->
+            <div class="flex justify-center gap-3 mb-6">
+              <div class="w-24 h-24 rounded-2xl bg-white/90 p-2.5 shadow-md border border-white/90 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/certs/badge-google-l1.png" alt="Google Certified Educator Level 1" class="w-full h-full object-contain">
+              </div>
+              <div class="w-24 h-24 rounded-2xl bg-white/90 p-2.5 shadow-md border border-white/90 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/certs/badge-google-l2.png" alt="Google Certified Educator Level 2" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-apple-slate mb-2 text-center">Google Certified Educator</h3>
+            <p class="text-apple-secondary text-xs sm:text-sm leading-relaxed text-center mb-6">
+              Pengiktirafan rasmi kepakaran standard dan lanjutan (<span class="italic font-semibold text-apple-slate">Super User</span>) alatan Google Workspace for Education (Drive, Sheets, Docs, Classroom) untuk PdP efisien.
+            </p>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-5 border-t border-slate-200/60 flex items-center gap-2 relative z-10">
+            <button onclick="openCertModal('google')" class="btn-apple-glass flex-1 text-xs py-2.5 px-3">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-apple-blue"></i>
+              <span>Sijil L1 & L2</span>
+            </button>
+            <a href="https://www.credential.net/55e08e7c-2a0f-4b68-9b90-51092dc9e1e4" target="_blank" rel="noopener noreferrer" class="btn-apple-primary flex-1 text-xs py-2.5 px-3">
+              <span>Sahkan</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CERT 3: Apple Teacher -->
+        <div class="liquid-glass liquid-glass-hover p-6 sm:p-7 flex flex-col justify-between group border-slate-300/60 relative">
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <span class="glass-pill text-[11px] py-1 px-3 text-slate-800">
+                Apple Inc.
+              </span>
+              <span class="text-[11px] font-semibold text-apple-tertiary flex items-center gap-1">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-slate-700"></i> Diiktiraf Apple
+              </span>
+            </div>
+
+            <!-- Official Badge Image Display -->
+            <div class="flex justify-center mb-6">
+              <div class="w-48 h-28 rounded-2xl bg-white/90 p-4 shadow-md border border-white/90 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/certs/badge-apple-teacher.svg" alt="Lencana Apple Teacher" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-apple-slate mb-2 text-center">Apple Teacher</h3>
+            <p class="text-apple-secondary text-xs sm:text-sm leading-relaxed text-center mb-6">
+              Pengiktirafan profesional oleh Apple atas penguasaan teknologi iPad dan Mac dalam membina pengalaman pembelajaran yang kreatif, kolaboratif, dan interaktif.
+            </p>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-5 border-t border-slate-200/60 flex items-center gap-2 relative z-10">
+            <button onclick="openCertModal('apple')" class="btn-apple-glass flex-1 text-xs py-2.5 px-3">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-apple-blue"></i>
+              <span>Sijil Apple</span>
+            </button>
+            <a href="https://www.apple.com/education/k12/apple-teacher/" target="_blank" rel="noopener noreferrer" class="btn-apple-primary flex-1 text-xs py-2.5 px-3">
+              <span>Info Apple</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         F. ALBUM CAROUSEL AKTIVITI & PENCAPAIAN
+         ========================================================================= -->
+    <section id="galeri" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="glass-pill mb-3">
+          <i data-lucide="image" class="w-4 h-4 text-apple-blue"></i>
+          <span>Dokumentasi & Arkib Aktiviti</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-apple-slate tracking-tight mb-4">
+          Album Aktiviti & Pencapaian
+        </h2>
+        <p class="text-apple-secondary text-sm sm:text-base leading-relaxed">
+          Sorotan momen inovasi i-MARATeCH, jalinan kerjasama strategik institusi, bengkel pemerkasaan guru, dan aktiviti kecemerlangan pelajar.
+        </p>
+
+        <!-- Category Filter Pills -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
+          <button onclick="filterGallery('all')" data-category="all" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-apple-blue border border-apple-blue text-white shadow-md transition-all cursor-pointer">
+            Semua Foto (20)
+          </button>
+          <button onclick="filterGallery('imaratech')" data-category="imaratech" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/80 border border-white/90 text-apple-secondary hover:text-apple-slate hover:bg-white shadow-sm transition-all cursor-pointer">
+            🏆 Inovasi i-MARATeCH (3)
+          </button>
+          <button onclick="filterGallery('bengkel')" data-category="bengkel" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/80 border border-white/90 text-apple-secondary hover:text-apple-slate hover:bg-white shadow-sm transition-all cursor-pointer">
+            📚 Bengkel & Pendidik (6)
+          </button>
+          <button onclick="filterGallery('pdp')" data-category="pdp" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/80 border border-white/90 text-apple-secondary hover:text-apple-slate hover:bg-white shadow-sm transition-all cursor-pointer">
+            🧪 Aktiviti Pelajar & PdP (8)
+          </button>
+          <button onclick="filterGallery('komuniti')" data-category="komuniti" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/80 border border-white/90 text-apple-secondary hover:text-apple-slate hover:bg-white shadow-sm transition-all cursor-pointer">
+            🏫 Sukan & Komuniti Maktab (3)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Carousel Liquid Glass Container -->
+      <div class="w-full liquid-glass p-4 sm:p-6 rounded-[32px] shadow-2xl border border-white/90 relative">
+        
+        <!-- Large Active Slide Frame -->
+        <div id="carousel-main-frame" class="carousel-slide-frame relative w-full rounded-2xl overflow-hidden bg-slate-900/10 aspect-[16/10] sm:aspect-[21/10] flex items-center justify-center group/slide cursor-pointer" onclick="openCarouselLightbox()">
+          <img id="carousel-main-img" src="assets/gallery/galeri-imaratech-emas.jpg" alt="Foto Galeri Cikgu Hafreez" class="w-full h-full object-cover transition-all duration-500" loading="eager" decoding="async">
+          
+          <!-- Subtle Gradient Vignette -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none"></div>
+
+          <!-- Top Badge & Counter -->
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+            <span id="carousel-tag" class="glass-pill bg-white/85 text-apple-slate text-[11px] py-1 px-3 shadow-md">
+              Inovasi i-MARATeCH
+            </span>
+            <span id="carousel-counter" class="glass-pill bg-black/50 text-white border-white/30 text-[11px] py-1 px-3 backdrop-blur-md">
+              1 / 20
+            </span>
+          </div>
+
+          <!-- Bottom Caption Overlay -->
+          <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 pointer-events-none text-left">
+            <h3 id="carousel-title" class="text-lg sm:text-2xl font-bold text-white tracking-tight drop-shadow-sm mb-1.5">
+              Pingat Emas & Johan i-MARATeCH 2026
+            </h3>
+            <p id="carousel-caption" class="text-xs sm:text-sm text-slate-200/95 leading-relaxed max-w-3xl drop-shadow-sm">
+              Penyampaian Anugerah Pingat Emas (RM 3,500.00) i-MARATeCH 2026 Kategori Inovasi ABM bagi Simulasi Kimia Cikgu Hafreez, MRSM Bagan Datuk.
+            </p>
+          </div>
+
+          <!-- Hover Lightbox Hint Pill -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <span class="glass-pill bg-white/90 text-apple-slate shadow-xl text-xs py-2 px-4 flex items-center gap-2 scale-95 group-hover/slide:scale-100 transition-transform">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-apple-blue"></i>
+              <span>Klik untuk Paparan Skrin Penuh</span>
+            </span>
+          </div>
+
+          <!-- Previous / Next Floating Buttons on Slide (Desktop/Tablet) -->
+          <button onclick="event.stopPropagation(); carouselPrev();" class="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/85 hover:bg-white text-apple-slate shadow-lg backdrop-blur-md transition-all active:scale-90 pointer-events-auto z-20 items-center justify-center" aria-label="Foto Sebelumnya">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button onclick="event.stopPropagation(); carouselNext();" class="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/85 hover:bg-white text-apple-slate shadow-lg backdrop-blur-md transition-all active:scale-90 pointer-events-auto z-20 items-center justify-center" aria-label="Foto Seterusnya">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Controls & Thumbnail Strip Row -->
+        <div class="mt-4 pt-3 flex flex-col sm:flex-row items-center justify-between gap-4">
+          
+          <!-- Thumbnail Reel -->
+          <div id="carousel-thumbs-container" class="w-full sm:w-auto flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
+            <!-- Populated dynamically via main.js -->
+          </div>
+
+          <!-- Carousel Extra Controls (with mobile prev/next buttons) -->
+          <div class="flex items-center gap-2 flex-shrink-0 w-full sm:w-auto justify-between sm:justify-end">
+            <!-- Mobile Prev/Next Quick Controls -->
+            <div class="flex sm:hidden items-center gap-1.5">
+              <button onclick="carouselPrev()" class="p-2 rounded-xl bg-white/80 hover:bg-white text-apple-slate border border-slate-200/60 shadow-sm active:scale-95" aria-label="Foto Sebelumnya">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button onclick="carouselNext()" class="p-2 rounded-xl bg-white/80 hover:bg-white text-apple-slate border border-slate-200/60 shadow-sm active:scale-95" aria-label="Foto Seterusnya">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button id="carousel-autoplay-btn" onclick="toggleAutoplay()" class="btn-apple-glass text-xs py-2 px-3.5" aria-label="Mainkan automatik karusel">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                <span>Main</span>
+              </button>
+              <button onclick="openCarouselLightbox()" class="btn-apple-primary text-xs py-2 px-3.5">
+                <i data-lucide="expand" class="w-3.5 h-3.5"></i>
+                <span>Skrin Penuh</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         G. Jemputan Bengkel, Kolaborasi & Maklum Balas (Glass Banner CTA)
+         ========================================================================= -->
+    <section id="kolaborasi" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto scroll-mt-24">
+      <div class="liquid-glass p-8 sm:p-12 md:p-16 rounded-[36px] relative overflow-hidden text-center bg-gradient-to-b from-white/80 via-white/70 to-blue-50/50 border border-white/95 shadow-2xl">
+        
+        <!-- Ambient decorative flare -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+          
+          <div class="glass-pill mb-4">
+            <i data-lucide="mail" class="w-4 h-4 text-apple-blue"></i>
+            <span>Rakan Strategik & Sekolah</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-apple-slate tracking-tight mb-5 leading-tight">
+            Jemputan Perkongsian, Bengkel & Kolaborasi
+          </h2>
+
+          <p class="text-apple-secondary text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            Berminat mengadakan bengkel pendigitalan PdP, inovasi alat bantu mengajar, atau sesi pemantapan konstruk Kimia SPM di sekolah atau institusi anda?
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <button onclick="openModal('collab-modal')" class="btn-apple-primary w-full sm:w-auto text-sm sm:text-base py-3.5 px-8 shadow-lg shadow-blue-500/25">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>Hubungi / Jemputan Rasmi</span>
+            </button>
+            <button onclick="openModal('feedback-modal')" class="btn-apple-glass w-full sm:w-auto text-sm sm:text-base py-3.5 px-8">
+              <i data-lucide="message-square-plus" class="w-5 h-5 text-apple-blue"></i>
+              <span>Hantar Maklum Balas Aplikasi</span>
+            </button>
+          </div>
+
+          <!-- Direct Contact Note -->
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-apple-tertiary">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Respon Pantas dalam 24 Jam
+            </span>
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Bimbingan Berpusatkan Guru & Murid
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       H. Minimalist Footer
+       ========================================================================= -->
+  <footer class="mt-20 border-t border-slate-200/80 bg-white/40 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-xl overflow-hidden shadow-sm border border-slate-200/80 bg-white p-0.5 flex-shrink-0">
+              <img src="assets/icons/icon-ecosystem.png" alt="Ekosistem Pendidikan CikguHafreez" class="w-full h-full object-cover rounded-[10px]">
+            </div>
+            <span class="text-lg font-extrabold text-apple-slate tracking-tight">
+              CikguHafreez<span class="text-apple-blue font-black">.my</span>
+            </span>
+          </div>
+          <p class="text-xs text-apple-secondary leading-relaxed max-w-sm mb-4">
+            Ekosistem pendidikan bersepadu yang dibangunkan untuk memacu pendigitalan bilik darjah, pengurusan pengajaran berkesan, dan penguasaan Kimia SPM.
+          </p>
+          <p class="text-[11px] text-apple-tertiary">
+            MRSM Bagan Datuk, Perak • Inovasi Pendidikan & Kimia KSSM
+          </p>
+        </div>
+
+        <!-- Col 2: Aplikasi Ekosistem -->
+        <div>
+          <h4 class="text-xs font-bold text-apple-slate uppercase tracking-wider mb-3">Aplikasi Ekosistem</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="https://erph-pintar.cikguhafreez.my/" target="_blank" rel="noopener noreferrer" class="text-apple-secondary hover:text-apple-blue flex items-center gap-2 transition-colors group">
+                <img src="assets/icons/icon-erph.png" alt="" class="w-4 h-4 rounded-md shadow-xs object-cover flex-shrink-0">
+                <span class="font-medium">eRPH Pintar KSSM</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://simulasikimia.cikguhafreez.my" target="_blank" rel="noopener noreferrer" class="text-apple-secondary hover:text-apple-blue flex items-center gap-2 transition-colors group">
+                <img src="assets/icons/icon-simulasi.png" alt="" class="w-4 h-4 rounded-md shadow-xs object-cover flex-shrink-0">
+                <span class="font-medium">Simulasi Kimia</span>
+                <span class="text-[10px] py-0.2 px-1.5 rounded-full bg-amber-500/15 text-amber-700 font-bold border border-amber-300/40">Emas</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://notakimia.cikguhafreez.my" target="_blank" rel="noopener noreferrer" class="text-apple-secondary hover:text-apple-blue flex items-center gap-2 transition-colors group">
+                <img src="assets/icons/icon-notakimia.png" alt="" class="w-4 h-4 rounded-md shadow-xs object-cover flex-shrink-0">
+                <span class="font-medium">Nota Kimia SPM</span>
+                <span class="text-[10px] py-0.2 px-1.5 rounded-full bg-blue-500/15 text-blue-700 font-bold border border-blue-300/40">Baharu</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigasi & Polisi -->
+        <div>
+          <h4 class="text-xs font-bold text-apple-slate uppercase tracking-wider mb-3">Navigasi & Undang-Undang</h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <a href="#tentang" class="text-apple-secondary hover:text-apple-blue transition-colors">Tentang Pembangun</a>
+            </li>
+            <li>
+              <a href="#pensijilan" class="text-apple-secondary hover:text-apple-blue transition-colors">Sijil Apple & Google</a>
+            </li>
+            <li>
+              <a href="#galeri" class="text-apple-secondary hover:text-apple-blue transition-colors">Album Aktiviti</a>
+            </li>
+            <li>
+              <button onclick="openModal('collab-modal')" class="text-apple-secondary hover:text-apple-blue transition-colors text-left">Jemputan & Kolaborasi</button>
+            </li>
+            <li>
+              <button onclick="openModal('privacy-modal')" class="text-apple-secondary hover:text-apple-blue transition-colors text-left underline">Dasar Privasi</button>
+            </li>
+            <li>
+              <button onclick="openModal('terms-modal')" class="text-apple-secondary hover:text-apple-blue transition-colors text-left underline">Terma Penggunaan</button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="pt-6 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-apple-tertiary">
+        <p>© 2026 Ekosistem Pendidikan CikguHafreez.my. Hak Cipta Terpelihara.</p>
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5 font-medium text-slate-600">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Semua Sistem Beroperasi Normal
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS
+       ========================================================================= -->
+
+  <!-- 1. Modal Jemputan / Kolaborasi Rasmi -->
+  <div id="collab-modal" role="dialog" aria-modal="true" aria-labelledby="collab-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="glass-modal-panel w-full max-w-lg p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-blue-500/10 text-apple-blue flex items-center justify-center">
+            <i data-lucide="send" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 id="collab-modal-title" class="text-lg font-bold text-apple-slate">Jemputan & Kolaborasi</h3>
+            <p class="text-xs text-apple-tertiary">Bengkel, perkongsian, atau latihan guru</p>
+          </div>
+        </div>
+        <button onclick="closeModal('collab-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="collab-form" class="space-y-4 text-left">
+        <div>
+          <label for="collab-nama" class="block text-xs font-semibold text-apple-slate mb-1.5">Nama Penuh Anda</label>
+          <input type="text" id="collab-nama" required placeholder="Contoh: Cikgu Ahmad / En. Firdaus" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="collab-institusi" class="block text-xs font-semibold text-apple-slate mb-1.5">Sekolah / Institusi</label>
+            <input type="text" id="collab-institusi" required placeholder="Contoh: SMK Seri Impian / PPD" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+          </div>
+          <div>
+            <label for="collab-emel" class="block text-xs font-semibold text-apple-slate mb-1.5">Emel Rasmi / Telefon</label>
+            <input type="text" id="collab-emel" required placeholder="emel@sekolah.edu.my" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+          </div>
+        </div>
+
+        <div>
+          <label for="collab-topik" class="block text-xs font-semibold text-apple-slate mb-1.5">Bentuk Program / Sesi</label>
+          <select id="collab-topik" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+            <option value="Bengkel Pendigitalan PdP & eRPH Pintar">Bengkel Pendigitalan PdP & eRPH Pintar Guru</option>
+            <option value="Bengkel Simulasi Kimia & Makmal Maya SPM">Bengkel Simulasi Kimia & Makmal Maya SPM (Pelajar/Guru)</option>
+            <option value="Ceramah Teknik Menjawab & Konstruk Kimia SPM">Ceramah Teknik Menjawab & Konstruk Kimia SPM</option>
+            <option value="Kolaborasi Pembangunan Modul & Inovasi">Kolaborasi Pembangunan Modul & Inovasi ABM</option>
+            <option value="Lain-lain">Lain-lain Hasrat Kerjasama</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="collab-nota" class="block text-xs font-semibold text-apple-slate mb-1.5">Butiran Tambahan & Cadangan Tarikh</label>
+          <textarea id="collab-nota" rows="3" placeholder="Sila nyatakan bilangan sasaran peserta, mod (fizikal/dalam talian), serta cadangan tarikh tentatif..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between gap-3">
+          <button type="button" onclick="closeModal('collab-modal')" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-apple-secondary hover:bg-slate-100 transition-colors">
+            Batal
+          </button>
+          <button type="submit" class="btn-apple-primary text-xs py-2.5 px-6">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Hantar Permohonan</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Modal Maklum Balas Aplikasi -->
+  <div id="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="glass-modal-panel w-full max-w-lg p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+            <i data-lucide="message-square-plus" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 id="feedback-modal-title" class="text-lg font-bold text-apple-slate">Maklum Balas Aplikasi</h3>
+            <p class="text-xs text-apple-tertiary">Bantu kami menambah baik ekosistem</p>
+          </div>
+        </div>
+        <button onclick="closeModal('feedback-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="feedback-form" class="space-y-4 text-left">
+        <div>
+          <label for="feedback-app" class="block text-xs font-semibold text-apple-slate mb-1.5">Aplikasi Terlibat</label>
+          <select id="feedback-app" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+            <option value="eRPH Pintar KSSM">eRPH Pintar KSSM</option>
+            <option value="Simulasi Kimia Cikgu Hafreez">Simulasi Kimia Cikgu Hafreez</option>
+            <option value="Nota Kimia SPM">Nota Kimia SPM</option>
+            <option value="Laman Portal cikguhafreez.my">Laman Utama Portal (cikguhafreez.my)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="feedback-jenis" class="block text-xs font-semibold text-apple-slate mb-1.5">Kategori Maklum Balas</label>
+          <select id="feedback-jenis" class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue">
+            <option value="Cadangan Ciri Baharu">Cadangan Ciri Baharu</option>
+            <option value="Laporan Ralat / Bug">Laporan Ralat / Bug Teknis</option>
+            <option value="Ketepatan Silibus / DSKP">Ketepatan Silibus / DSKP Kimia</option>
+            <option value="Pujian / Penghargaan">Pujian & Penghargaan</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="feedback-ulasan" class="block text-xs font-semibold text-apple-slate mb-1.5">Ulasan / Pandangan Anda</label>
+          <textarea id="feedback-ulasan" rows="4" required placeholder="Kongsi pengalaman anda menggunakan aplikasi ini dan bahagian yang boleh diperkasakan..." class="w-full px-3.5 py-2.5 rounded-xl bg-white/70 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-apple-blue"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between gap-3">
+          <button type="button" onclick="closeModal('feedback-modal')" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-apple-secondary hover:bg-slate-100 transition-colors">
+            Tutup
+          </button>
+          <button type="submit" class="btn-apple-primary text-xs py-2.5 px-6">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Hantar Maklum Balas</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Modal Dasar Privasi (Essential for Google OAuth & Policy compliance) -->
+  <div id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="glass-modal-panel w-full max-w-2xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-5 border-b border-slate-200/60 pb-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+          <h3 id="privacy-modal-title" class="text-lg font-bold text-apple-slate">Dasar Privasi (Privacy Policy)</h3>
+        </div>
+        <button onclick="closeModal('privacy-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="text-xs sm:text-sm text-apple-secondary space-y-4 text-left leading-relaxed">
+        <p>
+          <strong>Tarikh Berkuat Kuasa:</strong> 1 Januari 2026<br>
+          Ekosistem Pendidikan CikguHafreez.my (merangkumi <em>cikguhafreez.my</em>, <em>erph-pintar.cikguhafreez.my</em>, <em>simulasikimia.cikguhafreez.my</em>, dan <em>notakimia.cikguhafreez.my</em>) memandang serius keselamatan dan kerahsiaan data pengguna kami.
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">1. Penggunaan Integrasi Google OAuth & Google Drive / Sheets API</h4>
+        <p>
+          Bagi aplikasi <strong>eRPH Pintar KSSM</strong>, kebenaran akses Google OAuth hanya digunakan semata-mata untuk membolehkan guru menjana, menyimpan, dan menyelaraskan fail Rancangan Pengajaran Harian (RPH) terus ke akaun Google Drive peribadi guru tersebut. 
+        </p>
+        <p>
+          Kami <strong>TIDAK PERNAH</strong> dan <strong>TIDAK AKAN</strong> menyalin, memuat turun, menjual, berkongsi, atau mengekstrak dokumen Google Drive, lembaran kerja, atau butiran sensitif anda ke mana-mana pelayan pihak ketiga. Kesemua transaksi data berlaku terus antara pelayar web anda dan pelayan rasmi Google Cloud mengikut protokol keselamatan standard Google API Services User Data Policy.
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">2. Maklumat Bukan Peribadi & Analitis</h4>
+        <p>
+          Kami mungkin mengumpul maklumat tanpa pengecam peribadi seperti jenis pelayar, resolusi skrin, dan kekerapan capaian modul simulasi untuk tujuan penyelenggaraan teknikal, pengoptimuman prestasi kelajuan, dan penambahbaikan pengalaman pengguna (UX).
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">3. Hak Pengguna & Pemadaman Data</h4>
+        <p>
+          Pengguna boleh mencabut (revoke) kebenaran akses Google pada bila-bila masa melalui tetapan keselamatan akaun Google anda di bahagian <em>Aplikasi Pihak Ketiga</em>. Tiada data peribadi anda yang kekal pada pangkalan data kami.
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">4. Hubungi Kami</h4>
+        <p>
+          Sebarang pertanyaan berkaitan dasar privasi ini boleh dikemukakan terus melalui emel rasmi: <span class="font-semibold text-apple-blue">amierulhafreez@gmail.com</span>.
+        </p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-200/60 text-right">
+        <button onclick="closeModal('privacy-modal')" class="btn-apple-primary text-xs py-2 px-5">
+          Faham & Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Modal Terma Penggunaan -->
+  <div id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="glass-modal-panel w-full max-w-2xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-5 border-b border-slate-200/60 pb-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="file-text" class="w-5 h-5 text-apple-blue"></i>
+          <h3 id="terms-modal-title" class="text-lg font-bold text-apple-slate">Terma Penggunaan (Terms of Service)</h3>
+        </div>
+        <button onclick="closeModal('terms-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="text-xs sm:text-sm text-apple-secondary space-y-4 text-left leading-relaxed">
+        <h4 class="font-bold text-apple-slate text-sm">1. Penerimaan Terma</h4>
+        <p>
+          Dengan mengakses mana-mana bahagian dalam portal Ekosistem Pendidikan CikguHafreez.my, anda bersetuju untuk terikat dengan terma penggunaan ini. Perkhidmatan ini disediakan untuk tujuan pendidikan, pengajaran guru, dan pembelajaran murid.
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">2. Hak Cipta & Harta Intelek</h4>
+        <p>
+          Hak cipta bagi kod perisian, reka bentuk antara muka, logik simulasi maya Kimia, dan modul disusun oleh Cikgu Amierul Hafreez. Bahan simulasi dan nota disediakan untuk kegunaan pendidikan tanpa keuntungan. Sebarang pengedaran komersial semula, penjualan semula perisian, atau pengiklanan semula tanpa kebenaran bertulis adalah dilarang sama sekali.
+        </p>
+
+        <h4 class="font-bold text-apple-slate text-sm">3. Penafian Liabiliti</h4>
+        <p>
+          Aplikasi di dalam ekosistem ini dibangunkan dengan usaha terbaik mengikut silibus DSKP KSSM Kementerian Pendidikan Malaysia (KPM). Walau bagaimanapun, pengguna dinasihatkan sentiasa merujuk kepada Surat Pekeliling Ikhtisas (SPI) dan arahan rasmi pentadbiran sekolah masing-masing berkaitan pematuhan format dokumentasi terkini.
+        </p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-200/60 text-right">
+        <button onclick="closeModal('terms-modal')" class="btn-apple-primary text-xs py-2 px-5">
+          Saya Setuju
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Modal Galeri Lightbox (Paparan Penuh Carousel & Momen i-MARATeCH) -->
+  <div id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6">
+    <div class="glass-modal-panel w-full max-w-4xl p-4 sm:p-6 max-h-[94vh] flex flex-col justify-between">
+      
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200/60 mb-3">
+        <div class="flex items-center gap-2">
+          <span id="gallery-modal-title" class="gold-glass-badge glass-pill text-[10px] py-0.5 px-2.5 font-bold">
+            Arkib Foto & Dokumentasi
+          </span>
+          <span id="gallery-modal-count" class="text-xs font-bold text-apple-secondary">1 / 20</span>
+        </div>
+        <button onclick="closeModal('gallery-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup Galeri">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Main Image Display Container -->
+      <div class="relative w-full rounded-2xl overflow-hidden bg-slate-900/10 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center mb-3">
+        <img id="gallery-modal-img" src="assets/gallery/galeri-imaratech-emas.jpg" alt="Paparan Foto Penuh" class="w-full h-full object-contain bg-slate-950/20">
+        
+        <!-- Navigation Arrows -->
+        <button onclick="prevGalleryItem()" class="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/80 hover:bg-white text-apple-slate shadow-md backdrop-blur-md transition-transform active:scale-95 z-10" aria-label="Foto Sebelumnya">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button onclick="nextGalleryItem()" class="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/80 hover:bg-white text-apple-slate shadow-md backdrop-blur-md transition-transform active:scale-95 z-10" aria-label="Foto Seterusnya">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Caption & Controls -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+        <p id="gallery-modal-caption" class="text-xs text-apple-secondary text-center sm:text-left leading-relaxed flex-1">
+          Penyampaian Anugerah Pingat Emas (RM 3,500.00) i-MARATeCH 2026 Kategori Inovasi ABM bagi Simulasi Kimia Cikgu Hafreez, MRSM Bagan Datuk.
+        </p>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <button onclick="prevGalleryItem()" class="px-3.5 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-apple-secondary hover:bg-white transition-colors">
+            Sebelumnya
+          </button>
+          <button onclick="nextGalleryItem()" class="px-3.5 py-1.5 rounded-xl bg-apple-blue text-white text-xs font-semibold hover:bg-blue-600 transition-colors">
+            Seterusnya
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. Modal Pratonton Sijil Digital (Apple & Google) -->
+  <div id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title" class="glass-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6">
+    <div class="glass-modal-panel w-full max-w-3xl p-4 sm:p-6 max-h-[92vh] flex flex-col justify-between">
+      
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200/60 mb-3">
+        <div class="flex items-center gap-2">
+          <span class="blue-glass-badge glass-pill text-[10px] py-0.5 px-2.5 font-bold">
+            Sijil Digital Disahkan
+          </span>
+          <span id="cert-modal-issuer" class="text-xs font-semibold text-apple-tertiary">Google for Education</span>
+        </div>
+        <button onclick="closeModal('cert-modal')" class="p-1.5 rounded-full hover:bg-slate-100 text-apple-tertiary hover:text-apple-slate transition-colors" aria-label="Tutup Sijil">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Segmented Level Switcher (Displayed for Google Cert) -->
+      <div id="cert-modal-toggle" class="hidden items-center justify-center p-1 rounded-full bg-slate-100/90 border border-slate-200/80 gap-1 mb-2.5 mx-auto">
+        <button id="cert-toggle-l1" onclick="switchGoogleLevel('google-l1')" class="px-3.5 py-1 rounded-full text-xs font-semibold bg-apple-blue text-white shadow-sm transition-all">Level 1</button>
+        <button id="cert-toggle-l2" onclick="switchGoogleLevel('google-l2')" class="px-3.5 py-1 rounded-full text-xs font-semibold text-apple-secondary hover:text-apple-slate transition-all">Level 2</button>
+      </div>
+
+      <!-- Main Certificate Render Container -->
+      <div class="relative w-full rounded-2xl overflow-hidden bg-slate-900/5 aspect-[4/3] sm:aspect-[16/11] flex items-center justify-center mb-3 p-2 border border-slate-200/80">
+        <img id="cert-modal-img" src="assets/certs/cert-gemini.png" alt="Paparan Sijil Rasmi" class="w-full h-full object-contain rounded-xl shadow-sm">
+      </div>
+
+      <!-- Metadata & Verification Actions -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+        <div class="text-left flex-1">
+          <h4 id="cert-modal-title" class="text-sm font-bold text-apple-slate">Gemini Certified Educator</h4>
+          <p id="cert-modal-desc" class="text-[11px] text-apple-secondary leading-snug mt-0.5">
+            Mengesahkan penguasaan asas kecerdasan buatan dan model Gemini dalam konteks pendidikan.
+          </p>
+          <span id="cert-modal-validity" class="text-[10px] text-emerald-600 font-semibold block mt-1">Sah: 2026 – 2029</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <button onclick="closeModal('cert-modal')" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-apple-secondary hover:bg-white transition-colors">
+            Tutup
+          </button>
+          <a id="cert-modal-verify-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-apple-primary text-xs py-2 px-4 flex items-center gap-1.5">
+            <span>Sahkan Tauliah Rasmi</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
